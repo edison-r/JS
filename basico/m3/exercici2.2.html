@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="result"></div>
+
+    <script>
+        
+        let num1 = parseInt(window.prompt("Ingresa el primer número:"))
+        let num2 = parseInt(window.prompt("Ingresa el segundo número:"))
+        let resultDiv = document.getElementById("result")
+
+        console.log(num1)
+        console.log(num2)
+
+        if (isNaN(num1) || isNaN(num2)) {
+            resultDiv.innerHTML = "Por favor, ingresar un número"
+        } 
+        else {
+            let suma = num1 + num2
+            let rest = num1 - num2
+            let mult = num1 * num2
+            let divi = num1 / num2
+
+            //output
+            resultDiv.innerHTML = `
+            El resultat de la suma es: ${suma} <br>
+            El resultat de la resta es: ${rest} <br>
+            El resultat de la multiplicación es: ${mult} <br>
+            El resultat de la división es: ${divi} <br>
+            `; 
+        }
+
+    </script>
+</body>
+</html>

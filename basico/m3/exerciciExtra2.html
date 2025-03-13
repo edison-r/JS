@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="resultado"></div>
+
+    <script>
+
+        /*Escriu un programa JavaScript que calculi els litres de pintura necessaris 
+        per a pintar una paret rectangular. 
+        Un litre de pintura cobreix aproximadament, 12 m² en una sola mà.
+        Crear una constant, Cobertura a Litros (recordar les convencions de noms) per a guardar
+        la dada de cobertura de la pintura (12 m²).
+        
+        Hauràs de demanar a l'usuari/ària:
+        
+        L'alt i ample de la paret (multiplicant sabràs l'àrea de la mateixa).
+        El nombre de mans a aplicar.
+        Mostra en pantalla els litres de pintura a utilitzar.*/
+        
+        const COBERTURA_LITROS = 12 // 12 m2 por litro
+        
+        let altura = parseInt(window.prompt("Introduce la altura"))
+        let ancho = parseInt(window.prompt("Introduce el ancho"))
+        let manos = parseInt(window.prompt("¿Cuántas manos le quieres dar?"))
+        let area = altura * ancho
+
+        /* console.log(altura)
+        console.log(ancho)
+        console.log(manos)
+        console.log(area) */
+
+        let result = document.getElementById("resultado")
+        
+        let totalLitros = (area / COBERTURA_LITROS) * manos
+        // console.log(totalLitros)
+
+        result.innerHTML = `Necesitas ${totalLitros.toFixed(2)}L para poder pintar la pared`
+
+    </script>
+</body>
+</html>

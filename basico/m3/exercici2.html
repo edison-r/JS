@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="suma" ></div>
+    <div id="resta" ></div>
+    <div id="mult" ></div>
+    <div id="divi" ></div>
+
+
+    <script>
+/*Fer un programa que li demani dos nombres enters a l’usuari/ària. Al final, el programa imprimeix per pantalla el següent missatge:  
+El resultat de la suma és: “valor”
+El resultat de la resta és: “valor”
+El resultat de la multiplicació és: “valor”
+El resultat de la divisió és: “valor”.*/
+        
+        let num1 = window.prompt("Ingresa el primer número:")
+        let num2 = window.prompt("Ingresa el segundo número:")
+
+        console.log(num1)
+        console.log(num2)
+
+        Suma = parseInt(num1) + parseInt(num2)
+        Rest = num1 - num2
+        Mult = num1 * num2
+        Divi = num1 / num2
+
+        //input 
+        let resultadoSuma = document.getElementById("suma")
+        let resultadoRest = document.getElementById("resta")
+        let resultadoMult = document.getElementById("mult")
+        let resultadoDivi = document.getElementById("divi")
+
+        //output
+        resultadoSuma.innerHTML = Suma
+        resultadoRest.innerHTML = Rest
+        resultadoMult.innerHTML = Mult
+        resultadoDivi.innerHTML = Divi
+
+    </script>
+</body>
+</html>

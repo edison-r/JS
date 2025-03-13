@@ -1,0 +1,67 @@
+function main(){
+    
+    let num = parseInt(document.getElementById("num").value)
+    let resultDiv = document.getElementById("resultado");
+    
+    resultDiv.innerHTML = "";
+
+    if(validate(num)){
+        resultDiv.innerHTML = "Introduce un número válido";
+        return;
+    }
+
+    console.log(num);
+
+    dibujarArbol(num);
+
+}
+
+function validate(a){
+    return isNaN(a) || a < 1;
+}
+
+function dibujarArbol(a){
+
+    let resultDiv = document.getElementById("resultado");
+
+    for(i = 1; i <= a; i++){
+        for(j = 1; j <= i; j++){
+            resultDiv.innerHTML += `* `;
+        }
+        resultDiv.innerHTML += `<br>`
+    }
+
+    for(i = 2; i <= a; i++){
+        for(j = a; j >= i ; j--){
+            resultDiv.innerHTML += `* `;
+        }
+        resultDiv.innerHTML += `<br>`;
+    }
+}
+
+
+/* function dibujarArbol(a){ // Arbol inverso
+
+    let resultDiv = document.getElementById("resultado");
+
+    for(i = 1; i <= a; i++){
+        for(j = a; j >= i ; j--){
+            resultDiv.innerHTML += `* `;
+        }
+        resultDiv.innerHTML += `<br>`;
+    }
+
+}*/ 
+
+/* function dibujarArbol(a){ // Arbol normal
+
+    let resultDiv = document.getElementById("resultado");
+
+    for(i = 1; i <= a; i++){
+        for(j = 1; j <= i; j++){
+            resultDiv.innerHTML += `* `;
+        }
+        resultDiv.innerHTML += `<br>`;
+    }
+
+} */

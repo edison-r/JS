@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de SURF</title>
+</head>
+<body>
+    <h1 style="color:#0b5369 ;">¡Bienvenido/a SURF4LIFE!</h1>
+    <img src="img/surf.jpg" height="400px"><br>
+
+    <p>Selecciona una opción del menú:</p>
+
+    <input type="button" value="Ver menú" onclick="abrirMenu()">
+
+    <hr><br>
+
+    <div id="vistaMenu">
+        <input type="button" value="Calcular material tabla" onclick="main('Calcular material tabla')"><br><br>
+        <input type="button" value="Imprimir forecast" onclick="main('Imprimir forecast')"><br><br>
+        <input type="button" value="Coste por reserva" onclick="main('Coste por reserva')"><br><br>
+        <input type="button" value="Salir" onclick="main('Salir')"><br><br>
+    </div>
+
+    <br><br>
+
+    <div id="resultado"></div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

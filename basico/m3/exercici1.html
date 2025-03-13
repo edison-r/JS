@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 1</title>
+</head>
+<body>
+    <table>
+        <tbody align="center">
+            <tr>
+                <td> Nombre </td>
+                <td> Apellido </td>
+                <td> Edad </td>
+            </tr>
+            <tr>
+                <td><div id="nombre"></div></td>
+                <td><div id="apellido"></div></td>
+                <td><div id="edad"></div></td>
+            </tr>
+        </tbody>
+    </table>  
+     
+    <script>
+/* Fer un programa que li demani a l’usuari mitjançant el prompt aquestes datos: Nom. apellido. Edat.
+Un cop l’usuari hagi acabat d’introduir les datos, aquestes s’han de mostrar: Per consola. Amb un popup (alert). Mitjançant getElementById(). */
+
+        let nombre = window.prompt("Nombre")
+        let apellido = window.prompt("Apellido")
+        let edad = window.prompt("Edad") 
+        
+        let datos = "Nombre: " + nombre + ", Apellido: " + apellido + ", Edad: " + edad
+
+        console.log(datos) 
+        window.alert(datos)
+
+        console.log({nombre, apellido, edad}) // buscado en internet
+
+        //input 
+        let nombreDiv = document.getElementById("nombre")
+        let apellidoDiv = document.getElementById("apellido")
+        let edadDiv = document.getElementById("edad")
+
+        //output
+        nombreDiv.innerHTML = nombre
+        apellidoDiv.innerHTML = apellido
+        edadDiv.innerHTML = edad
+
+    </script>    
+</body>
+</html>

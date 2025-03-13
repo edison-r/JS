@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        /*Escriu un programa JavaScript que llegeix un nombre (número) 
+        i mostra per pantalla el doble i el triple d'aquest número.*/
+        
+        let num = parseInt(window.prompt("Introduce un número"))
+        const doble = 2
+        const triple = 3
+
+        let result = document.getElementById("resultado")
+
+        let resDoble = num * doble
+        let resTriple = num * triple
+
+        result.innerHTML = `El doble del número ${num} es: ${resDoble}, y el triple: ${resTriple}`
+
+    </script>
+    
+</body>
+</html>

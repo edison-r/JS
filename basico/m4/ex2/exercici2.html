@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Años de experiencia</h1>
+    <p>Crea un programa que sol·liciti a l’usuari/ària que introdueixi el seu nom <br>
+        i el nombre d’anys que porta treballant en una empresa. Després mostra per <br>
+        pantalla el seu nivell d’experiència, segons la següent taula:<br><br>
+
+        Menys de 2 anys: Nivell principiant.<br>
+        Entre 2 i 4 anys: Nivell intermedi.<br>
+        Més de 4 i fins a 7 anys: Nivell avançat.<br>
+        Més de 7 i fins a 10 anys: Nivell expert.<br>
+        Més de 10 anys: Nivell Gurú.</p>
+
+    <label for="nombre">Escribe tu nombre</label>
+    <input type="text" name="nombre" id="nombre">
+    <br>
+    <br>
+    <label for="years">Escribe los años en la empresa </label>
+    <input type="number" name="years" id="years">
+    <br>
+    <br>
+    <input type="button" value="¡Descubrelo!" onclick="mostrarExperiencia()">
+    <br>
+    <br>
+    <div id = "resultado"></div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

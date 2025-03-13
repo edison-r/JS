@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7.1 Exercici 8</title>
+</head>
+<body>
+    <h1>CAMBIO DE UNIDADES</h1>
+    <p>Crea un menú que permeti canviar d’unitats:<br>
+        Passar de metres a peus / de peus a metres.<br>
+        De metres a iardes / de iardes a metres.<br><br>
+    
+    <label for="unidad">De: </label>
+    <select id="unidad">
+        <option value="mtoft">Metros (m) a Pies (ft)</option>
+        <option value="fttom">Pies (ft) a Metros (m)</option>
+        <option value="mtoyd">Metros (m) a Yardas (yd)</option>
+        <option value="ydtom">Yardas (yd) a Metros (m)</option>
+    </select>
+    <br><br>
+
+    <label for="num"> </label>
+    <input type="number" id="num" placeholder="Valor a convertir">
+    
+    <input type="button" value="Convertir" onclick="main()">
+    <br><br>
+    
+    <div id="resultado"></div>
+    
+    <script src="main.js"></script>
+   
+</body>
+</html>

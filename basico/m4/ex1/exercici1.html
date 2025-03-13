@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num1">Escriba el primer número</label>
+    <input type="number" name="num1" id="num1">
+    <br>
+    <label for="num2">Escriba el segundo número</label>
+    <input type="number" name="num2" id="num2">
+    <br>
+    <br>
+    <input type="button" value="click me" onclick="comparar()">
+    <br>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+
+/*Crea un programa que sol·liciti a l'usuari/ària que introdueixi 
+dos nombres enters i mostri per pantalla el major dels dos.*/
+
+        function comparar(){
+            
+/*var*/     let resultDiv = document.getElementById("resultado");
+            let num1Input = parseInt(document.getElementById("num1").value);
+            let num2Input = parseInt(document.getElementById("num2").value);
+            
+            let message = "";
+
+/*error*/   if (isNaN(num1Input) || isNaN(num2Input)){
+                message = "Por favor, introduce un número válido";
+/*operar*/  } else{
+                if (num1Input == num2Input){
+                    message = `${num1Input} y ${num2Input} son iguales`;
+                } else if (num1Input > num2Input){
+                    message = `${num1Input} es mayor`;
+                } else {
+                    message = `${num2Input} es mayor`;
+                }
+            }
+
+/*display*/ resultDiv.innerHTML = message;
+        }
+    </script>
+</body>
+</html>

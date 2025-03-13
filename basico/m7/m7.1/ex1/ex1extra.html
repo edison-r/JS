@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1- Ejercicio EXTRA</title>
+</head>
+<body>
+    <h1>Encuentra los Pares Mágicos</h1>
+    <p> Crea un programa que solicite al usuario que introduzca cinco números enteros.<br><br>
+        El programa debe mostrar:<br>
+        Todos los números ingresados.<br>
+        El mayor y el menor de los números ingresados.<br>
+        Si existen dos números cuya suma sea igual a otro número en el array.<br>
+        Si existen números repetidos.</p>
+
+    <label for="numero1">Introduce el primer número: </label>
+    <input type="number" id="numero1">
+    <br>
+    
+    <label for="numero2">Introduce el segundo número: </label>
+    <input type="number" id="numero2">
+    <br>
+
+    <label for="numero3">Introduce el tercer número: </label>
+    <input type="number" id="numero3">
+    <br>
+    
+    <label for="numero4">Introduce el cuarto número: </label>
+    <input type="number" id="numero4">
+    <br>
+
+    <label for="numero5">Introduce el quinto número: </label>
+    <input type="number" id="numero5">
+    <br><br>
+
+    <input type="button" value="Calcular" onclick="calcular()">
+    <br><br>
+    
+    <div id="resultado"></div>
+    
+    <script>
+
+        function calcular(){
+
+            let num1 = parseInt(document.getElementById("numero1").value);
+            let num2 = parseInt(document.getElementById("numero2").value);
+            let num3 = parseInt(document.getElementById("numero3").value);
+            let num4 = parseInt(document.getElementById("numero4").value);
+            let num5 = parseInt(document.getElementById("numero5").value);
+
+            // console.log(num1, num2, num3, num4, num5)
+
+            const arrayNumeros = [num1, num2, num3, num4, num5];
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                document.getElementById("resultado").innerHTML = "Por favor, introduce cinco números válidos.";
+                return;
+            }
+
+            let max = Math.max(...arrayNumeros); // El operador "..." expande los numeros del array
+            let min = Math.min(...arrayNumeros); // let min = Math.min(num1, num2, num3...); Es lo mismo!
+
+            document.getElementById("resultado").innerHTML = ""; // Para limpiar la pantalla
+            document.getElementById("resultado").innerHTML += `Números ingresados: ${num1}, ${num2}, ${num3}, ${num4}, ${num5}`;
+            document.getElementById("resultado").innerHTML += `<br>Número mayor: ${max}<br> Número menor: ${min}`;
+            
+            document.getElementById("resultado").innerHTML += "<br><br><h3> Números mágicos: </h3>";
+            for (let i = 0; i < arrayNumeros.length; i++){ // i empieza por num1
+                for (let j = i + 1; j < arrayNumeros.length; j++){ // j empieza por num2
+                    if (arrayNumeros.includes(arrayNumeros[i] + arrayNumeros[j])){ // el método includes() es para verificar si un array contiene un valor específico.
+                        document.getElementById("resultado").innerHTML += `<br>${arrayNumeros[i]} + ${arrayNumeros[j]} = ${arrayNumeros[i] + arrayNumeros[j]} -> Es un par mágico`;
+                    }
+                }
+
+            }
+
+            document.getElementById("resultado").innerHTML += "<br><br><h3> Números repetidos: </h3>";
+            for (let x = 0; x < arrayNumeros.length; x++){
+                for (let y = x + 1; y < arrayNumeros.length; y++){
+                    if (arrayNumeros[x] == arrayNumeros[y]){
+                        document.getElementById("resultado").innerHTML += `<br>${arrayNumeros[x]} y ${arrayNumeros[y]} son iguales`;
+                    }
+                }
+            }
+
+        }
+
+    </script>   
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="result"></div>
+
+    <script>
+/*El programa demana a l'usuari/ària que introdueixi 3 notes i 
+el programa mostra la mitjana de les 3 notes per pantalla.*/ 
+
+        let nota1 = parseFloat(window.prompt("Ingresa la primera nota:"))
+        let nota2 = parseFloat(window.prompt("Ingresa la segunda nota:"))    
+        let nota3 = parseFloat(window.prompt("Ingresa la tercera nota:"))      
+
+        const numDividir = 3
+
+        let resultDiv = document.getElementById("result")
+
+        let suma = nota1 + nota2 + nota3
+        let promedio = suma / numDividir
+
+        resultDiv.innerHTML = `El promedio es ${promedio.toFixed(2)}` // toFixed: para poner decimales
+
+    </script>
+</body>
+</html>
+
+
+
