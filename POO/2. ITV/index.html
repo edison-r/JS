@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    
+    <div>
+        <input type="text" id="marca" placeholder="MARCA"><br>
+        <input type="text" id="modelo" placeholder="MODELO"><br>
+        <input type="text" id="potencia" placeholder="POTENCIA"><br>
+        <input type="text" id="cilindrada" placeholder="CILINDRADA"><br>
+        <input type="text" id="color" placeholder="COLOR"><br>
+    </div>
+    <br>
+    <div>
+    <input type="button" value="Crear 1 coche" onclick="crearCoche()">
+    <input type="button" value="Crear varios coches" onclick="introducirCoche()">
+    <input type="button" value="Buscar" onclick="buscarCoche()">
+    </div>
+
+    <div id="resultado"></div>
+    <script src="main.js"></script>
+    <script src="Coche.js"></script>
+
+</body>
+</html>
