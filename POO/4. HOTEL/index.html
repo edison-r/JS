@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles</title>
+</head>
+<body>
+    <h1>Gestor de Hoteles</h1>
+    <p>Selecciona una opción del menú</p>
+    <hr><br>
+
+    <div>
+        <input type="button" value="Crear Hotel" onclick="main('Crear Hotel')">
+        <input type="button" value="Dar de baja Hotel" onclick="main('Dar de Baja Hotel')">
+        <input type="button" value="Ver Hotel" onclick="main('Ver Hotel')">
+        <input type="button" value="Modificar Hotel" onclick="main('Modificar Hotel')">
+
+    </div>
+    <br>
+    <!-- Crear Hotel -->
+    <div id="vistaCrearHotel">
+        <input type="text" id="nombreHotelCrear" placeholder="Nombre">
+        <input type="text" id="numHabitaciones" placeholder="Habitaciones">
+        <input type="text" id="numPlantas" placeholder="Plantas">
+        <input type="text" id="superficie" placeholder="Superficie (m²)">
+        <br><br>
+        <input type="button" value="Crear" onclick="crearHotel()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <!-- Baja Hotel -->
+    <div id="vistaDarDeBajaHotel">
+        <input type="text" id="nombreHotelBaja" placeholder="Hotel para la Baja">
+        <br><br>
+        <input type="button" value="Dar de Baja" onclick="darDeBajaHotel()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <!-- Ver Hotel -->
+    <div id="vistaVerHotel">
+        <input type="text" id="nombreHotelVer" placeholder="Hotel para Visualizar">
+        <br><br>
+        <input type="button" value="Ver Hotel" onclick="verHotel()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <!-- Modificar Hotel -->
+    <div id="vistaModificarHotel">
+        <input type="text" id="nombreHotelModificar" placeholder="Hotel a Modificar">
+        <input type="text" id="numHabitacionesModificar" placeholder="Nuevo nº Habitaciones">
+        <input type="text" id="numPlantasModificar" placeholder="Nuevo nº Plantas">
+        <input type="text" id="superficieModificar" placeholder="Nueva Superficie (m²)">
+        <br><br>
+        <input type="button" value="Modificar" onclick="modificarHotel()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <hr>
+    <div id="resultado"></div>
+    <hr>
+    <div id="bbdd"></div>
+    <script src="Hotel.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
