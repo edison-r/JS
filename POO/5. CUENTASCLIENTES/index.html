@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+</head>
+<body>
+    <h1>App de Banco</h1>
+    <p>Selecciona una opción del menú</p>
+    <hr><br>
+    <div>
+        <input type="button" value="Crear Cliente" onclick="main('Crear Cliente')">
+        <input type="button" value="Eliminar Cliente" onclick="main('Eliminar Cliente')">
+        <input type="button" value="Crear Cuenta" onclick="main('Crear Cuenta')">
+        <input type="button" value="Ingresar Dinero" onclick="main('Ingresar Dinero')">
+        <input type="button" value="Retirar Dinero" onclick="main('Retirar Dinero')">
+    </div>
+    <br>
+    <div id="vistaCrearCliente">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="text" id="dni" placeholder="DNI">
+        <br><br>
+        <input type="button" value="Crear Cliente" onclick="crearCliente()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <div id="vistaEliminarCliente">
+        <input type="text" id="dniEliminar" placeholder="DNI a Eliminar">
+        <br><br>
+        <input type="button" value="Eliminar Cliente" onclick="eliminarCliente()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <div id="vistaCrearCuenta">
+        <input type="text" id="dniCuenta" placeholder="DNI asociado">
+        <input type="text" id="numCuenta" placeholder="Nuevo nº Cuenta">
+        <br><br>
+        <input type="button" value="Crear cuenta" onclick="crearCuenta()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <div id="vistaIngresarDinero">
+        <input type="text" id="dniIngreso" placeholder="DNI cliente">
+        <input type="text" id="numCuentaIngreso" placeholder="Nº Cuenta">
+        <input type="text" id="importeIngreso" placeholder="Importe ingreso">
+        <br><br>
+        <input type="button" value="Ingresar" onclick="ingresarDinero()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <div id="vistaRetirarDinero">
+        <input type="text" id="dniRetiro" placeholder="DNI cliente">
+        <input type="text" id="numCuentaRetiro" placeholder="Nº Cuenta">
+        <input type="text" id="importeRetiro" placeholder="Importe retiro">
+        <br><br>
+        <input type="button" value="Retirar" onclick="retirarDinero()">
+        <input type="button" value="Cancelar" onclick="ocultarFormulario()">
+    </div>
+    <hr>
+    <div id="resultado"></div>
+    
+    <script src="Cuenta.js"></script>
+    <script src="Cliente.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

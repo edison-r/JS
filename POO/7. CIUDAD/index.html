@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Edificios</title>
+
+</head>
+<body>
+    <h1>Gestión de Edificios</h1>
+
+    <h2>Agregar Edificio</h2>
+    <hr><br>
+        <label for="tipo">Tipo de Edificio:</label>
+        <select id="tipo" name="tipo">
+            <option value="elegir">Elegir tipo</option>
+            <option value="hotel">Hotel</option>
+            <option value="hospital">Hospital</option>
+            <option value="cine">Cine</option>
+        </select>
+        <br><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+        <label for="plantas">Número de Plantas:</label>
+        <input type="number" id="plantas" name="plantas" required>
+        <br><br>
+        <label for="superficie">Superficie (m²):</label>
+        <input type="number" id="superficie" name="superficie" required>
+        <br><br>
+        <div id="habitacionesGroup" style="display:none;">
+            <label for="habitaciones">Número de Habitaciones:</label>
+            <input type="number" id="habitaciones" name="habitaciones">
+        </div>
+        <div id="pacientesGroup" style="display:none;">
+            <label for="pacientes">Número de Pacientes:</label>
+            <input type="number" id="pacientes" name="pacientes">
+        </div>
+        <div id="aforoGroup" style="display:none;">
+            <label for="aforo">Aforo Máximo:</label>
+            <input type="number" id="aforo" name="aforo">
+        </div>
+    <button type="button" class="button" onclick="agregarEdificio()">Agregar Edificio</button>
+    <br>
+    <div id="resultado"></div>
+    <hr>
+    <h2>Lista de Edificios</h2>
+    <div id="edificiosLista"></div>
+
+    <script>
+        function agregarEdificio() {
+            const tipo = document.getElementById('tipo').value;
+            const nombre = document.getElementById('nombreAlta').value;
+            const plantas = document.getElementById('plantas').value;
+            const superficie = document.getElementById('superficie').value;
+
+            let edificio = { tipo, nombre, plantas, superficie };
+
+            if (tipo === 'hotel') {
+                const habitaciones = document.getElementById('habitaciones').value;
+                edificio.habitaciones = habitaciones;
+            } else if (tipo === 'hospital') {
+                const pacientes = document.getElementById('pacientes').value;
+                edificio.pacientes = pacientes;
+            } else if (tipo === 'cine') {
+                const aforo = document.getElementById('aforo').value;
+                edificio.aforo = aforo;
+            }
+
+            mostrarEdificio(edificio);
+        }
+
+        function mostrarEdificio(edificio) {
+            const edificiosLista = document.getElementById('edificiosLista');
+            const edificioDiv = document.createElement('div');
+            edificioDiv.className = 'edificio';
+
+            const titulo = document.createElement('h3');
+            titulo.textContent = edificio.nombre;
+            edificioDiv.appendChild(titulo);
+
+            const detalles = document.createElement('p');
+            detalles.textContent = `Tipo: ${edificio.tipo}, Plantas: ${edificio.plantas}, Superficie: ${edificio.superficie} m²`;
+            edificioDiv.appendChild(detalles);
+
+            if (edificio.tipo === 'hotel') {
+                const habitaciones = document.createElement('p');
+                habitaciones.textContent = `Habitaciones: ${edificio.habitaciones}`;
+                edificioDiv.appendChild(habitaciones);
+            } else if (edificio.tipo === 'hospital') {
+                const pacientes = document.createElement('p');
+                pacientes.textContent = `Pacientes: ${edificio.pacientes}`;
+                edificioDiv.appendChild(pacientes);
+            } else if (edificio.tipo === 'cine') {
+                const aforo = document.createElement('p');
+                aforo.textContent = `Aforo Máximo: ${edificio.aforo}`;
+                edificioDiv.appendChild(aforo);
+            }
+
+            const eliminarBtn = document.createElement('button');
+            eliminarBtn.className = 'button button-delete';
+            eliminarBtn.textContent = 'Eliminar';
+            eliminarBtn.onclick = function() {
+                edificiosLista.removeChild(edificioDiv);
+            };
+            edificioDiv.appendChild(eliminarBtn);
+
+            edificiosLista.appendChild(edificioDiv);
+        }
+
+        document.getElementById('tipo').addEventListener('change', function() {
+            const tipo = this.value;
+            document.getElementById('habitacionesGroup').style.display = tipo === 'hotel' ? 'block' : 'none';
+            document.getElementById('pacientesGroup').style.display = tipo === 'hospital' ? 'block' : 'none';
+            document.getElementById('aforoGroup').style.display = tipo === 'cine' ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>

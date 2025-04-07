@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestió de Persones</title>
+</head>
+<body>
+    <h1>Gestió de Persones</h1>
+    <label for="dniInput">Introdueix el DNI:</label>
+    <input type="text" id="dniInput">
+    <button onclick="buscarPersonaDNI()">Buscar Persona</button>
+    <button onclick="posicioPersonaDNI()">Posició Persona</button>
+    <br><br>
+    
+    <label for="hobbyInput">Introdueix un hobby:</label>
+    <input type="text" id="hobbyInput">
+    <button onclick="buscarPerHobby()">Persones amb Hobby</button>
+    <button onclick="comprovarHobby()">Algú té aquest Hobby?</button>
+    <button onclick="primeraPersonaAmbHobby()">Primera Persona amb Hobby</button>
+    <br><br>
+    
+    <button onclick="totalHobbys()">Total de Hobbys</button>
+    <button onclick="nomsEnMajuscules()">Noms en Majúscules</button>
+    
+    <p id="resultat"></p>
+    <script src="main.js"></script>
+
+</body>
+</html>

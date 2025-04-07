@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Círculos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2> Comparador de Círculos</h2>
+    <div id="primerCirculo">
+        <p>Primer círculo</p>
+        <input type="text" id="primerCirculoX" placeholder="Coordenada X">
+        <input type="text" id="primerCirculoY" placeholder="Coordenada Y">
+        <input type="text" id="primerCirculoRadio" placeholder="Radio">
+    </div>
+    <br>
+    <div id="segundoCirculo">
+        <p>Segundo círculo</p>
+        <input type="text" id="segundoCirculoX" placeholder="Coordenada X">
+        <input type="text" id="segundoCirculoY" placeholder="Coordenada Y">
+        <input type="text" id="segundoCirculoRadio" placeholder="Radio">
+    </div>
+    <br>
+    <input type="button" value="Comparar" onclick="compararCirculos()">
+    <input type="button" value="Limpiar" onclick="borrarFormulario()">
+    <br>
+
+    <div id="resultado"></div>
+    <br>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <!--style="border:1px solid black;-->
+
+    <script src="Punto.js"></script>
+    <script src="Circulo.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
